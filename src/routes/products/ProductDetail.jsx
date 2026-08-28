@@ -99,13 +99,13 @@ export default function ProductDetail() {
 
       <div className="content-grid">
         <div>
-          <div className="app-card mb-3">
+          <div className="app-card mb-3 product-info-card">
             <div className="card-head">
               <h5>Product Information</h5>
             </div>
             <div className="card-body-app">
-              <div className="row">
-                <div className="col-md-3">
+              <div className="row g-3">
+                <div className="col-12 col-md-4 product-info-card__image-col">
                   <div className="product-image-wrap mx-auto">
                     <ImagePreviewThumb
                       assetId={product.imageAssetId}
@@ -117,41 +117,41 @@ export default function ProductDetail() {
                     <div className="small-note text-center mt-2">{product.sku}</div>
                   </div>
                 </div>
-                <div className="col-md-9">
-                  <div className="row g-2">
-                    <div className="col-6 d-flex justify-content-between">
+                <div className="col-12 col-md-8">
+                  <ul className="list-unstyled product-info-card__fields mb-0">
+                    <li className="product-info-card__field">
                       <span className="small-note">Category</span>
                       <strong>{product.category}</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Barcode</span>
                       <strong>6009811042</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Brand</span>
                       <strong>Lazy Pygmy Originals</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Batch number</span>
                       <strong>B-2025-072</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Grade level</span>
                       <strong>Nursery</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Date added</span>
                       <strong>12 Mar 2025</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Age group</span>
                       <strong>3 – 5 years</strong>
-                    </div>
-                    <div className="col-6 d-flex justify-content-between">
+                    </li>
+                    <li className="product-info-card__field">
                       <span className="small-note">Status</span>
                       <strong className="text-success">{product.status}</strong>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <p className="small-note mt-3 mb-0">Beginner alphabet reader with 32 illustrated pages.</p>

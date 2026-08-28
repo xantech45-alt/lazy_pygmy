@@ -26,3 +26,4 @@ Thumbs.db
 # Office temp files
 ~$*
 *.pptx
+.vercel

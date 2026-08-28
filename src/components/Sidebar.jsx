@@ -48,7 +48,13 @@ export default function Sidebar({ className = 'app-sidebar', onNavigate }) {
   return (
     <aside className={className}>
       <div className="sidebar-brand d-flex align-items-center gap-2">
-        <div className="brand-mark">LP</div>
+        <img
+          src="/logo.png"
+          alt="Lazy Pygmy logo"
+          className="brand-mark"
+          width={34}
+          height={34}
+        />
         <div>
           <div className="fw-bold text-white">Lazy Pygmy</div>
           <div className="small sidebar-suite">

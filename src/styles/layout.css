@@ -26,11 +26,10 @@
   width: 34px;
   height: 34px;
   border-radius: 8px;
-  background: var(--color-secondary-deep);
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-weight: 700;
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+  flex: 0 0 auto;
 }
 
 .sidebar-nav {

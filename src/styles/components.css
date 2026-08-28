@@ -1236,4 +1236,83 @@
   color: var(--color-text-muted, #6c757d);
 }
 
+/* Product Information card (ProductDetail page)
+ * Spec rhythm: 8 px between adjacent label-value pairs, 10 px vertical
+ * padding inside each pair so label and value don't sit on top of each
+ * other. Image scales down on phones so it never overflows the card.
+ * Field list uses CSS grid: 2 columns at md+, 1 column below — and every
+ * adjacent pair gets a visual gap (border-left on the second column)
+ * instead of `justify-content-between` against the next label. */
+.product-info-card__image-col {
+  display: flex;
+  justify-content: center;
+}
+
+.product-info-card__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-4, 16px);
+  row-gap: 0;
+}
+
+.product-info-card__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3, 12px);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border, #e9ecef);
+}
+
+.product-info-card__fields > .product-info-card__field:nth-child(odd) {
+  border-right: 1px solid var(--color-border, #e9ecef);
+  padding-right: var(--space-3, 12px);
+}
+
+.product-info-card__fields > .product-info-card__field:nth-child(even) {
+  padding-left: var(--space-3, 12px);
+}
+
+.product-info-card__fields > .product-info-card__field:last-child,
+.product-info-card__fields > .product-info-card__field:nth-last-child(2):nth-child(odd) {
+  border-bottom: 0;
+}
+
+.product-info-card__field .small-note {
+  flex: 0 0 auto;
+}
+
+.product-info-card__field strong {
+  text-align: right;
+  word-break: break-word;
+  min-width: 0;
+}
+
+/* Phone / narrow viewport: stack to a single column, full-width image
+ * that fits inside the card with breathing room. */
+@media (max-width: 575.98px) {
+  .product-info-card__image-col {
+    margin-bottom: var(--space-3, 12px);
+  }
+
+  .product-info-card .product-image-wrap,
+  .product-info-card .image-preview-square {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .product-info-card__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info-card__fields > .product-info-card__field:nth-child(odd) {
+    border-right: 0;
+    padding-right: 12px;
+  }
+
+  .product-info-card__fields > .product-info-card__field:nth-child(even) {
+    padding-left: 12px;
+  }
+}
+
 
