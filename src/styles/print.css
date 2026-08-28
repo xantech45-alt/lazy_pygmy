@@ -1,0 +1,83 @@
+/**
+ * print.css — applied to A4 print layouts (receipts, reports, etc.).
+ * Hides chrome (sidebar, topbar, footer, action buttons) and sets A4 page
+ * geometry so window.print() produces a clean PDF preview.
+ */
+@media print {
+  :root {
+    --color-canvas: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm 12mm 14mm 12mm;
+  }
+
+  /* Hide chrome that doesn't belong on paper */
+  body[data-printing] .app-sidebar,
+  body[data-printing] .topbar,
+  body[data-printing] .sidebar-backdrop,
+  body[data-printing] .mobile-nav,
+  body[data-printing] .no-print {
+    display: none !important;
+  }
+
+  /* Reset layout to a single column when printing */
+  body[data-printing] .app-shell,
+  body[data-printing] .app-content,
+  body[data-printing] main,
+  body[data-printing] .row,
+  body[data-printing] [class*='col-'] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body[data-printing] {
+    background: #fff !important;
+  }
+
+  body[data-printing] .page-header,
+  body[data-printing] .app-card,
+  body[data-printing] .print-card {
+    box-shadow: none !important;
+    border: 1px solid #d0d0d0 !important;
+    page-break-inside: avoid;
+  }
+
+  body[data-printing] .print-only {
+    display: block !important;
+  }
+
+  body[data-printing] table {
+    page-break-inside: auto;
+  }
+
+  body[data-printing] tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  body[data-printing] thead {
+    display: table-header-group;
+  }
+
+  body[data-printing] h1,
+  body[data-printing] h2,
+  body[data-printing] h3 {
+    color: #000 !important;
+  }
+
+  body[data-printing] a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
+
+.print-only {
+  display: none;
+}

@@ -1,0 +1,208 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  background: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.sidebar-suite {
+  color: var(--color-sidebar-text);
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--color-secondary-deep);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  padding: 12px 10px;
+  overflow-y: auto;
+}
+
+.sidebar-nav .nav-link {
+  color: var(--color-sidebar-text);
+  padding: 10px 14px;
+  margin: 2px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+}
+
+.sidebar-nav .nav-link.active {
+  background: var(--color-secondary);
+  color: #fff;
+  border-left: 3px solid #64d2cf;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 12px 14px 18px;
+}
+
+.sidebar-capacity {
+  background: rgba(47, 101, 173, .28);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.app-main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+/* Topbar geometry — values come from src/styles/variables.css so the whole
+ * topbar is one compact horizontal row at standard desktop widths:
+ *   • 60 px tall (`--topbar-height`)
+ *   • 24 px horizontal padding (`--topbar-pad-x`)
+ *   • child elements set `flex: 0 0 auto` / `flex-shrink: 0` so wrapping
+ *     is impossible; actions progressively hide on narrow widths via
+ *     `.topbar-actions` rules in components.css rather than wrapping.
+ */
+.app-topbar {
+  height: var(--topbar-height);
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--topbar-pad-x);
+  gap: var(--space-4);
+}
+
+/* The brand block never grows / shrinks, so the actions row always sits
+ * flush right and the topbar never reflows into two rows. */
+.app-topbar > .brand-block {
+  flex: 0 0 auto;
+}
+
+.content-wrap {
+  /* Spec rhythm: 20–24 px between topbar and content. 24 px gives the page
+   * the breathing room the design system expects at desktop widths. */
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--content-max-width, 1480px);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  /* Spec rhythm: 12–16 px from breadcrumbs, 20–24 px to the next card.
+   * Title sits flush to header top; the subtitle adds a 6–8 px gap. */
+  margin: 0 0 var(--space-5);
+}
+
+.page-header > div:first-child {
+  /* Title + subtitle stack: 6–8 px gap between them. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--preview-panel-width);
+  gap: var(--space-5);
+}
+
+/* Form-heavy pages: two-column form + right preview panel.
+ * Spec: preview panel 280–340 px wide; left column takes the rest.
+ * Collapses to a single column at <1200 px (inherits `.content-grid`
+ * collapse from responsive.css). */
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--preview-panel-width);
+  gap: var(--form-grid-gap);
+  align-items: start;
+}
+
+.form-layout__main {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.form-layout__preview {
+  position: sticky;
+  top: calc(var(--topbar-height) + var(--space-5));
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+/* Stack to a single column below the spec's 1200 px breakpoint so the
+ * preview panel no longer competes with the form on tablet landscape. */
+@media (max-width: 1199.98px) {
+  .form-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .form-layout__preview {
+    position: static;
+  }
+}
+
+.login-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+}
+
+.login-hero {
+  background: #143452;
+  color: #fff;
+  padding: 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-panel {
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-card {
+  width: min(430px, 100%);
+}
+

@@ -1,0 +1,1239 @@
+.app-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.app-card .card-head {
+  padding: 14px 18px;
+}
+
+.app-card .card-body-app {
+  padding: 16px 18px;
+}
+
+.kpi-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 110px;
+}
+
+.kpi-label {
+  font-size: .9rem;
+  color: var(--color-text-muted);
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.kpi-trend {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--color-success);
+  margin-top: 5px;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  padding: .34rem .62rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .78rem;
+}
+
+.badge-instock,
+.badge-delivered,
+.badge-received,
+.badge-paid,
+.badge-active {
+  background: #e5f4ec;
+  color: var(--color-success);
+}
+
+.badge-low,
+.badge-packed,
+.badge-partial,
+.badge-pending {
+  background: #fbf1dc;
+  color: var(--color-warning);
+}
+
+.badge-out,
+.badge-unpaid,
+.badge-cancelled,
+.badge-under-review {
+  background: #f7e6e4;
+  color: var(--color-danger);
+}
+
+.badge-processing,
+.badge-approved,
+.badge-info {
+  background: var(--color-secondary-tint);
+  color: var(--color-info);
+}
+
+.badge-draft,
+.badge-inactive {
+  background: #edf0f3;
+  color: var(--color-text-muted);
+}
+
+.btn-primary-app {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #fff;
+}
+
+.btn-primary-app:hover {
+  background: var(--color-secondary-hover);
+  border-color: var(--color-secondary-hover);
+  color: #fff;
+}
+
+.btn-outline-app {
+  border: 1px solid var(--color-border-strong);
+  background: #fff;
+  color: var(--color-secondary);
+}
+
+.btn-outline-app:hover {
+  background: var(--color-secondary-tint);
+  color: var(--color-secondary-hover);
+}
+
+.btn-danger-app {
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  background: #fff;
+}
+
+.btn-danger-app:hover {
+  background: #fbeceb;
+}
+
+.filter-bar {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.bulk-bar {
+  background: #eaf6f6;
+  border: 1px solid #d2eceb;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.tabs-app {
+  border-bottom: 1px solid var(--color-border);
+  gap: 14px;
+}
+
+.tabs-app .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-muted);
+  padding: .7rem .25rem;
+}
+
+.tabs-app .nav-link.active {
+  background: transparent;
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* Inert tab — placeholder for a future page that isn't built yet.
+   Visually muted + cursor:not-allowed so users understand it isn't clickable.
+   Pair with aria-disabled="true" + tabIndex={-1} on the JSX side. */
+.tabs-app .nav-link[aria-disabled="true"] {
+  color: var(--color-text-faint);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.metric-tile {
+  background: var(--color-surface-alt);
+  border-left: 3px solid var(--color-secondary);
+  border-radius: 6px;
+  padding: 14px;
+}
+
+/* Drop-zone used by the "Employee photo" preview card.
+ * Spec: comfortable padding (--space-5), minimum height tall enough for
+ * an .xl profile-avatar (112 px) + helper text without crowding. Inner
+ * content uses a vertical stack so avatar, copy, and button sit on a
+ * single rhythm axis (--space-3 between each block). */
+.upload-zone {
+  border: 1px dashed var(--color-border-strong);
+  background: #fafafa;
+  border-radius: 12px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-5) var(--space-5);
+  gap: var(--space-3);
+}
+
+.toast-container {
+  z-index: 2000;
+}
+
+.activity-item {
+  padding: 16px;
+  border-left: 3px solid var(--color-info);
+  border-bottom: 1px solid var(--color-border);
+  background: #fff;
+}
+
+.activity-item.warning {
+  border-left-color: var(--color-warning);
+}
+
+.activity-item.danger {
+  border-left-color: var(--color-danger);
+}
+
+.activity-item.success {
+  border-left-color: var(--color-success);
+}
+
+.chart-box {
+  position: relative;
+  min-height: 260px;
+}
+
+.chart-box canvas {
+  width: 100%;
+  height: 250px;
+}
+
+.avatar {
+  /* Nav avatar — spec 32–36 px. Centralised so TopbarAccountMenu trigger
+   * and the `.account-menu-trigger .avatar` override both line up. */
+  width: var(--avatar-nav-size, 34px);
+  height: var(--avatar-nav-size, 34px);
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.icon-circle {
+  /* Spec 38–40 px square icon button — notifications/help sit beside the
+   * search field without inflating the topbar height. */
+  width: var(--control-height-icon, 38px);
+  height: var(--control-height-icon, 38px);
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--color-danger);
+  color: #fff;
+  border-radius: 999px;
+  font-size: .65rem;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.crumbs .breadcrumb {
+  margin-bottom: 0;
+}
+
+.crumbs .breadcrumb-item,
+.crumbs .breadcrumb-item a {
+  font-size: .84rem;
+  color: var(--color-text-faint);
+}
+
+.form-section {
+  padding: 10px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.modified-field {
+  border-color: var(--color-warning) !important;
+  background: #fffbf2;
+}
+
+.modified-note {
+  color: var(--color-warning);
+  font-size: .78rem;
+}
+
+.unsaved-banner {
+  background: #fbf1dc;
+  border-left: 4px solid var(--color-warning);
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.capacity-line {
+  height: 6px;
+  background: rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.capacity-line > span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent-teal);
+}
+
+/* Modal backdrop overlay.
+   Implemented as a <button> so it gets a free keyboard listener and a
+   proper a11y role; styled here to render as a transparent fullscreen
+   click-target that closes any open modal. */
+.modal-backdrop-app {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
+.modal-backdrop-app:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -2px;
+}
+
+.modal-app {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.modal-app-dialog {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-app-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-app-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+}
+
+.modal-app-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.btn-close-app {
+  background: transparent;
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.btn-close-app:hover {
+  color: var(--color-text);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Image import field + thumb (Phase 2)
+ * Companion to docs/CLIENT_IMAGE_STORAGE.md.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.image-import-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.image-import-label strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.image-import-dropzone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fb;
+  border: 2px dashed var(--color-border, #d6dbe1);
+  border-radius: var(--radius-md, 8px);
+  min-height: 160px;
+  padding: 16px;
+  text-align: center;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+/* Square dropzone (profile + product photo upload).
+ * Spec: must NOT grow to fill the parent column — profile photos look
+ * oversized when the dropzone balloons past 220 px wide. Cap width to
+ * --image-product-size (220 px) and keep a 4:3 aspect ratio so the empty
+ * state + import button sit comfortably. The image preview inside is
+ * already constrained by .image-import-preview to object-fit: contain,
+ * so it will scale gracefully inside whatever frame this gives it.
+ *
+ * Alignment: pinned to the left edge of its column (margin-inline: start)
+ * so it reads as "attached" to the form label above it rather than
+ * floating in the middle of empty column whitespace. */
+.image-import-dropzone.square {
+  width: 100%;
+  max-width: var(--image-product-size, 220px);
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  margin-inline: start;
+}
+
+.image-import-dropzone.wide {
+  aspect-ratio: 16 / 9;
+}
+
+.image-import-dropzone.has-image {
+  background: #fff;
+}
+
+.image-import-dropzone.drag-over {
+  border-color: var(--color-primary, #2f65ad);
+  background: #eef4fb;
+}
+
+.image-import-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted, #6c757d);
+}
+
+.image-import-empty i {
+  font-size: 2rem;
+  color: var(--color-text-muted, #6c757d);
+}
+
+.image-import-preview {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.image-import-busy {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(47, 101, 173, 0.92);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.image-import-error {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.image-import-storage-note {
+  color: var(--color-text-muted, #6c757d);
+}
+
+.btn-outline-danger-app {
+  background: transparent;
+  border: 1px solid var(--color-danger, #b53a3a);
+  color: var(--color-danger, #b53a3a);
+}
+
+.btn-outline-danger-app:hover {
+  background: var(--color-danger, #b53a3a);
+  color: #fff;
+}
+
+/* ImagePreviewThumb surfaces — spec tokenised.
+ *   product thumb (tables)    : 48 × 48
+ *   product preview (cards)   : 220 × 220
+ *   product preview (wide)    : 180 height
+ *   avatar / profile preview  : 112 × 112 (round)
+ *   nav avatar                : `--avatar-nav-size` (34)
+ * Every surface is `aspect-ratio: 1/1` and capped with `max-width: 100%`
+ * so it never overflows its parent card / table cell. */
+.image-preview-thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f3f5;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+}
+
+/* Product thumbnails inside tables / inline lists — 48 px square. */
+.image-preview-product {
+  width: var(--image-thumb-size, 48px);
+  height: var(--image-thumb-size, 48px);
+}
+
+/* Wide card thumbnail — keeps a 4:3 aspect but inherits the card-height
+ * token so all product cards share the same height. */
+.image-preview-product.image-preview-thumb.image-preview-wide {
+  width: auto;
+  height: var(--image-card-height, 180px);
+  aspect-ratio: 4 / 3;
+}
+
+/* Product preview (single-product page, list cards) — spec 220 × 220. */
+.image-preview-square {
+  width: var(--image-product-size, 220px);
+  height: var(--image-product-size, 220px);
+}
+
+/* Profile / account avatar preview — spec 112 × 112 round. */
+.image-preview-avatar {
+  width: var(--image-profile-size, 112px);
+  height: var(--image-profile-size, 112px);
+  border-radius: 50%;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #d6dbe1);
+  aspect-ratio: 1 / 1;
+}
+
+.image-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* Product detail page — wraps a 220×220 square preview + the SKU caption
+ * beneath it. Width is tokenised to --image-product-size so the wrapper
+ * tracks the image even if the spec value changes. */
+.product-image-wrap {
+  width: var(--image-product-size, 220px);
+}
+
+.image-preview-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted, #6c757d);
+  background: linear-gradient(135deg, #eef0f3 0%, #dde2e7 100%);
+}
+
+.image-preview-fallback-avatar i {
+  font-size: 2.4rem;
+}
+
+.image-preview-fallback-product {
+  position: relative;
+  background: #e9ecef;
+}
+
+.image-preview-fallback-product span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #d6dde3 0%, #b6bdc4 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 70%);
+}
+
+.image-preview-fallback-product span:nth-child(2) {
+  background: linear-gradient(135deg, #c8cfd5 0%, #a3aab1 100%);
+  clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
+  opacity: 0.7;
+}
+
+.image-preview-fallback-product span:nth-child(3) {
+  background: linear-gradient(135deg, #b6bdc4 0%, #8d949c 100%);
+  clip-path: polygon(40% 0, 100% 0, 100% 60%, 60% 30%);
+  opacity: 0.5;
+}
+
+/* Profile + Account + Settings tabs (Phase 3 + Phase 4).
+ * Spec rhythm: --space-4 (16 px) gap between the avatar preview and the
+ * meta column — matches the topbar/header rhythm so the avatar reads as
+ * "attached" to the metadata, not floating in its own row. */
+.profile-photo-block,
+.account-avatar-block {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-photo-meta {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.profile-photo-meta .display-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.settings-tabnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--color-border, #d6dbe1);
+}
+
+.settings-tabnav button {
+  background: transparent;
+  border: 0;
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--color-text-muted, #6c757d);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.settings-tabnav button[aria-current="page"] {
+  color: var(--color-text, #1c2024);
+  border-bottom-color: var(--color-primary, #2f65ad);
+}
+
+.settings-tabnav button:hover:not([aria-current="page"]) {
+  color: var(--color-text, #1c2024);
+}
+
+.account-menu {
+  position: relative;
+}
+
+.account-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 8px);
+  padding: 4px 8px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.account-menu-trigger:hover,
+.account-menu-trigger:focus-visible {
+  background: #eef0f3;
+  border-color: var(--color-border, #d6dbe1);
+  outline: none;
+}
+
+.account-menu-trigger .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Trigger avatar mirrors the nav avatar token so all topbar avatars line
+   * up to the same diameter. Spec: 32–36 px. */
+  width: var(--avatar-nav-size, 34px);
+  height: var(--avatar-nav-size, 34px);
+  border-radius: 50%;
+  background: var(--color-primary, #2f65ad);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+
+.account-menu-trigger .avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.account-menu-list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #d6dbe1);
+  border-radius: var(--radius-md, 8px);
+  min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  z-index: 1100;
+}
+
+.account-menu-list a,
+.account-menu-list button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-text, #1c2024);
+  font-size: 0.95rem;
+}
+
+.account-menu-list a:hover,
+.account-menu-list button:hover {
+  background: #f1f3f5;
+}
+
+.account-menu-list hr {
+  border: 0;
+  border-top: 1px solid var(--color-border, #d6dbe1);
+  margin: 4px 0;
+}
+
+/* Wizard stepper polish (Phase 5) */
+.wizard-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wizard-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef0f3;
+  color: var(--color-text-muted, #6c757d);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.wizard-step span:first-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #c8cfd5;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.wizard-step.active {
+  background: #e8f1fb;
+  color: var(--color-primary, #2f65ad);
+}
+
+.wizard-step.active span:first-child {
+  background: var(--color-primary, #2f65ad);
+}
+
+.wizard-step.done {
+  background: #e6f4ec;
+  color: #1d6f3a;
+}
+
+.wizard-step.done span:first-child {
+  background: #1d6f3a;
+}
+
+.wizard-step a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wizard-line {
+  flex: 1 1 30px;
+  height: 2px;
+  background: #d6dbe1;
+  min-width: 20px;
+}
+
+.wizard-line.complete {
+  background: #1d6f3a;
+}
+
+@media (max-width: 575px) {
+  /* On phone widths, allow the square dropzone to grow to the column edge
+   * so the import button stays comfortably tappable. Still capped by the
+   * image-product-size token at desktop; below 575 px we drop the cap. */
+  .image-import-dropzone.square {
+    max-width: 100%;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Mobile navigation drawer
+ * Implemented entirely in React — does NOT rely on the Bootstrap JS bundle,
+ * so the app still works without bootstrap/dist/js/bootstrap.bundle.js.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.mobile-nav-backdrop {
+  /* When the drawer opens on mobile, this button covers the rest of the
+   * viewport and dims the main content behind it. Geometry is repeated
+   * explicitly (width/height + inset) so we don't depend on the base
+   * .modal-backdrop-app rule alone being parsed in order — and so the
+   * dim colour can't be lost if a future change resets the base. */
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, .55);
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  /* z-index 1054 keeps the backdrop ABOVE the sticky topbar (z-1020) and the
+   * fixed desktop sidebar (z-1030) so the dim is visible across the whole
+   * viewport, while staying just BELOW the drawer (z-1055) so the drawer
+   * itself remains the topmost element and fully clickable. */
+  z-index: 1054;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(280px, 85vw);
+  /* Same dark teal as the desktop sidebar — the drawer should look like
+   * the desktop sidebar sliding onto a small screen, not a separate
+   * light-themed navigation. Reuses --color-sidebar-bg so a future token
+   * change to the sidebar propagates to the drawer automatically. */
+  background: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  z-index: 1055;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .18);
+  animation: mobile-nav-slide-in 180ms ease-out;
+}
+
+@keyframes mobile-nav-slide-in {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.mobile-nav-drawer .offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  /* Faint white-alpha separator matches the desktop sidebar's
+   * `.sidebar-brand { border-bottom: 1px solid rgba(255,255,255,.08) }`
+   * so the brand row visually continues into the nav list. */
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background: var(--color-sidebar-bg);
+  color: #fff;
+}
+
+.mobile-nav-drawer .offcanvas-header h5 {
+  color: #fff;
+  font-weight: 700;
+}
+
+.mobile-nav-drawer .offcanvas-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  /* Let the drawer's dark teal show through; the inner <Sidebar/> paints
+   * its own dark background so the body's colour is purely a fallback. */
+  background: var(--color-sidebar-bg);
+}
+
+/* The desktop sidebar is `position: fixed; inset: 0 auto 0 0` which would
+ * conflict with the drawer's own positioning. Inside the drawer we just
+ * want the sidebar to fill the drawer's body — no background override, so
+ * it picks up the same --color-sidebar-bg the desktop sidebar uses. */
+.mobile-nav-drawer .app-sidebar {
+  width: 100%;
+  height: 100%;
+  position: static;
+  background: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* The drawer already renders its own header (`.offcanvas-header` above)
+ * with the wordmark + close button, so the duplicated `.sidebar-brand`
+ * block (LP badge + Lazy Pygmy title) is hidden. Keeps a single brand row
+ * visible to the user instead of stacking two. */
+.mobile-nav-drawer .app-sidebar .sidebar-brand {
+  display: none;
+}
+
+/* No `nav-link` colour override here: the desktop rule
+ * `.sidebar-nav .nav-link { color: var(--color-sidebar-text) }` already
+ * gives the drawer the correct light-teal nav text against the dark
+ * background. Overriding it would force a different colour than desktop. */
+
+/* Active + hover state inside the mobile drawer.
+ *
+ * Reuses the EXACT desktop treatment from layout.css
+ * `.sidebar-nav .nav-link.active` (solid --color-secondary blue, white
+ * text, 3 px left accent in #64d2cf) plus the desktop hover wash
+ * (rgba(255,255,255,.06) → #fff) so the drawer and the desktop sidebar
+ * are visually identical for the active/hover state — not a "pale tint"
+ * approximation. */
+.mobile-nav-drawer .app-sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+}
+
+.mobile-nav-drawer .app-sidebar .nav-link.active {
+  background: var(--color-secondary);
+  color: #fff;
+  border-left: 3px solid #64d2cf;
+  padding-left: 11px; /* compensate for the 3px border so text stays aligned */
+}
+
+.mobile-nav-drawer .app-sidebar .sidebar-footer {
+  background: transparent;
+}
+
+/* The base `.btn-close-app` rule colours the close button with
+ * --color-text-muted (a dark grey tuned for white surfaces) — invisible
+ * against the drawer's dark teal. Flip it to a soft white that still
+ * reads as a control on the dark background. The hit area is the full
+ * <button> (40 px square), not just the glyph, so it stays tappable. */
+.mobile-nav-drawer .btn-close-app {
+  color: rgba(255, 255, 255, .85);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.mobile-nav-drawer .btn-close-app:hover,
+.mobile-nav-drawer .btn-close-app:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, .08);
+  outline: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Topbar (Phase 5 GL-04)
+ * `.topbar-actions` allows wrapping on screens that can't fit all icons,
+ * and `.icon-only-btn` provides a touch-friendly square button while the
+ * role select is collapsed to icon-only on narrow viewports.
+ * ──────────────────────────────────────────────────────────────────────────── */
+/* ──────────────────────────────────────────────────────────────────────
+ * Topbar (Phase 5 GL-04)
+ * `.topbar-actions` is a single horizontal row at standard desktop widths.
+ * Children shrink / hide progressively (see media queries below) rather
+ * than wrapping into a second row — the previous `flex-wrap` is what
+ * produced the two-row layout at 1199.98 px and below.
+ * ────────────────────────────────────────────────────────────────────── */
+.topbar-actions {
+  /* Sit flush-right of the brand block, never wrap, never grow. */
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.topbar-actions > * {
+  flex: 0 0 auto;
+}
+
+/* Topbar children that have a defined minimum width need a `min-width: 0`
+ * override on the search field so it can shrink inside the actions row. */
+.topbar-search {
+  min-width: var(--topbar-search-min);
+  max-width: var(--topbar-search-max);
+  flex: 0 1 var(--topbar-search-max);
+}
+
+/* Magnifying-glass glyph that sits inside the search input. Anchored to the
+ * left padding of the `.form-control` so it never overlaps typed text. */
+.topbar-search-icon {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.topbar-role {
+  /* Spec 160–210 px — fixed width so the select neither stretches nor
+   * collapses to a single character. */
+  min-width: var(--topbar-role-min);
+  max-width: var(--topbar-role-max);
+  flex: 0 0 var(--topbar-role-max);
+}
+
+.topbar-new .dropdown-menu.show {
+  display: block;
+}
+
+.icon-only-btn {
+  /* Same square footprint as `.icon-circle` so all icon buttons in the
+   * topbar sit on the same baseline. */
+  width: var(--control-height-icon, 38px);
+  height: var(--control-height-icon, 38px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ≥1200 px: every topbar element visible. No wraps. */
+@media (min-width: 1200px) {
+  .topbar-actions {
+    flex-wrap: nowrap;
+  }
+}
+
+/* 992–1199 px (tablet landscape): hide search on narrow desktops; rest of
+ * the row stays one-line. Children flex-shrink so role select never wraps. */
+@media (max-width: 1199.98px) {
+  .topbar-search {
+    /* Search collapses gracefully — view still has room for role + icons. */
+    max-width: 260px;
+    min-width: 200px;
+  }
+
+  .topbar-role {
+    flex-basis: var(--topbar-role-min);
+  }
+}
+
+/* 576–991 px (tablet portrait): hide the help icon button so notifications,
+ * role, avatar still fit. The hamburger takes over for nav. */
+@media (max-width: 991.98px) {
+  .topbar-search {
+    display: none !important;
+  }
+
+  .icon-circle.is-help {
+    display: none !important;
+  }
+}
+
+/* ≤575 px (phone): only the brand + hamburger + role + avatar remain.
+ * Notifications, help, search, "New" all collapse to keep one row. */
+@media (max-width: 575.98px) {
+  .topbar-actions {
+    gap: var(--space-2) !important;
+  }
+
+  .topbar-new .new-label,
+  .icon-circle.is-notifications,
+  .icon-circle.is-help,
+  .topbar-search {
+    display: none !important;
+  }
+
+  .topbar-role {
+    flex-basis: var(--topbar-role-min);
+    max-width: 140px;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * OTP / verify-code cells (Phase 1 auth · NAV-04 / a11y)
+ * Square cell that shrinks gracefully from ~52px desktop down to ~40px on
+ * 320px-wide phones so the row of 6 fits without horizontal scroll.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.otp-cell {
+  width: 52px;
+  height: 56px;
+  padding: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .otp-cell {
+    width: 40px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 359.98px) {
+  .otp-cell {
+    width: 34px;
+    height: 42px;
+    font-size: 1.05rem;
+  }
+}
+
+.otp-cells {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 359.98px) {
+  .otp-cells {
+    gap: 4px !important;
+  }
+}
+
+/* Semantic text/background helpers (Phase 5 DS-03).
+ * Mirror the "*-app" convention so features never reach for ad-hoc hex. */
+.text-danger-app {
+  color: var(--color-danger);
+}
+
+.text-success-app {
+  color: var(--color-success);
+}
+
+.text-warning-app {
+  color: var(--color-warning);
+}
+
+.text-info-app {
+  color: var(--color-info);
+}
+
+.text-muted-app {
+  color: var(--color-text-muted);
+}
+
+.bg-surface-app {
+  background: var(--color-surface);
+}
+
+/* Density + reduced motion (Phase 4 Settings · Appearance) */
+:root[data-density="compact"] .app-card .card-body-app {
+  padding: 10px 14px;
+}
+
+:root[data-density="compact"] .table-app td,
+:root[data-density="compact"] .table-app th {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+}
+
+:root[data-reduced-motion="true"] *,
+:root[data-reduced-motion="true"] *::before,
+:root[data-reduced-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-reduced-motion="false"]) *,
+  :root:not([data-reduced-motion="false"]) *::before,
+  :root:not([data-reduced-motion="false"]) *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Per-row kebab menu (Phase 5 dead-button fix)
+ * Drop-in replacement for bare `.row-menu` triggers. Uses React state for
+ * open/close — never Bootstrap JS. Anchored top-right of the cell so it
+ * never overflows the table at 320–1920px.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.row-actions-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.row-actions-wrap .row-menu[aria-expanded="true"] {
+  background: #eef0f3;
+  color: var(--color-text, #1c2024);
+}
+
+.row-actions-wrap .row-menu[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.row-actions-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 140px;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #d6dbe1);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(16, 20, 26, 0.10);
+  padding: 4px;
+  z-index: 1050;
+}
+
+.row-actions-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-text, #1c2024);
+  font-size: 0.92rem;
+}
+
+.row-actions-link:hover,
+.row-actions-link:focus-visible {
+  background: #f1f3f5;
+  color: var(--color-text, #1c2024);
+  outline: none;
+}
+
+.row-actions-link i {
+  color: var(--color-text-muted, #6c757d);
+}
+
+

@@ -1,0 +1,74 @@
+:root {
+  --color-canvas:#F6F7F9;
+  --color-surface:#FFFFFF;
+  --color-surface-alt:#F0F2F5;
+  --color-border:#E3E6EB;
+  --color-border-strong:#C9CFD8;
+  --color-text:#10141A;
+  --color-text-muted:#5B6572;
+  --color-text-faint:#8A93A0;
+  --color-sidebar-bg:#0E2C2A;
+  --color-sidebar-text:#A9C0BB;
+  --color-sidebar-active:#12564E;
+  --color-primary:#12564E;
+  --color-primary-hover:#0D3F39;
+  --color-primary-tint:#E6F0EE;
+  /* Brand secondary — the deep ocean blue used for buttons, active tabs,
+   * checkboxes, and KPI accents. Single source of truth: any "blue
+   * chrome" element must reference this token, never raw hex. */
+  --color-secondary:#2f65ad;
+  --color-secondary-hover:#24548f;
+  --color-secondary-deep:#2c67b0;
+  --color-secondary-tint:#E8EEF8;
+  --color-accent-teal:#2fb4a9;
+  --color-success:#1E8E5A;
+  --color-warning:#D08700;
+  --color-danger:#B3261E;
+  --color-info:#2C6ECB;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:20px;
+  --shadow-soft:0 8px 24px rgba(16,20,26,.06);
+  --sidebar-width:248px;
+  --content-max-width:1480px;
+
+  /* ──────────────────────────────────────────────────────────────────────
+   * Topbar geometry — spec: 60px tall, 24px horizontal padding.
+   * `.app-topbar` consumes these so all sizing is centralised.
+   * ────────────────────────────────────────────────────────────────────── */
+  --topbar-height:60px;
+  --topbar-pad-x:24px;
+
+  /* Spacing scale (4 px cadence) — single source for vertical/horizontal
+   * rhythm. Use these instead of one-off rem/em values so layout reflows
+   * predictably across viewports. */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-7:32px;
+  --space-8:48px;
+
+  /* Control sizing — topbar buttons, inputs, selects, search. */
+  --control-height:40px;
+  --control-height-sm:32px;
+  --control-height-icon:38px;
+  --topbar-search-min:280px;
+  --topbar-search-max:360px;
+  --topbar-role-min:160px;
+  --topbar-role-max:210px;
+
+  /* Image sizes — product, profile, avatar, table thumbnail, card cover. */
+  --image-product-size:220px;
+  --image-card-height:180px;
+  --image-thumb-size:48px;
+  --image-profile-size:112px;
+  --avatar-nav-size:34px;
+  --upload-preview-min:220px;
+  --preview-panel-min:280px;
+  --preview-panel-max:340px;
+  --preview-panel-width:320px;
+  --form-grid-gap:24px;
+}

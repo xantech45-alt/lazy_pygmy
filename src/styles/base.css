@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: Calibri, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.font-numeric {
+  font-family: Arial, sans-serif;
+}
+
+.display-serif {
+  font-family: Cambria, Georgia, serif;
+}
+
+.text-muted-app {
+  color: var(--color-text-muted) !important;
+}
+
+.text-faint {
+  color: var(--color-text-faint) !important;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
+  margin-top: .3rem;
+}
+
+.section-kicker {
+  font-size: .77rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #2f629c;
+  font-weight: 700;
+}
+
+.small-note {
+  font-size: .82rem;
+  color: var(--color-text-muted);
+}
+
+.app-divider {
+  border-top: 1px solid var(--color-border);
+}
+
+.visually-clickable {
+  cursor: pointer;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .4rem;
+}
+
+.focus-ring:focus,
+.form-control:focus,
+.form-select:focus,
+.btn:focus {
+  box-shadow: 0 0 0 .2rem rgba(18, 86, 78, .16) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.required::after {
+  content: " *";
+  color: var(--color-danger);
+}

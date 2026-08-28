@@ -1,0 +1,68 @@
+.form-label {
+  font-size: .86rem;
+  color: var(--color-text-muted);
+  margin-bottom: .3rem;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--color-border-strong);
+  border-radius: 6px;
+}
+
+/* Default comfortable height for ordinary text/select fields. Compact
+ * variants (search inputs in table filters, OTP cells, icon-only form
+ * controls) opt out with `.form-control-sm` / `.form-control-compact`
+ * or by overriding `min-height` locally — the global floor was forcing
+ * every control to 40px and breaking dense filters. */
+.form-control:not(.form-control-sm):not(.form-control-compact):not([size]),
+.form-select:not(.form-select-sm):not(.form-select-compact) {
+  min-height: 40px;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background: #eef0f4;
+  color: var(--color-text-faint);
+}
+
+/* `.form-control-compact` — opt-in helper for dense table filters and
+ * inline search inputs that should sit on a single line. */
+.form-control.form-control-compact {
+  min-height: 32px;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: .9rem;
+}
+
+.invalid-feedback {
+  font-size: .8rem;
+}
+
+.input-unit {
+  position: relative;
+}
+
+.input-unit .unit {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .78rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.input-unit input {
+  padding-right: 48px;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.helper-text {
+  font-size: .8rem;
+  color: var(--color-text-muted);
+}

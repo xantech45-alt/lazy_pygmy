@@ -1,0 +1,210 @@
+@media (max-width: 1199.98px) {
+  .dashboard-kpis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    display: none;
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .content-wrap {
+    /* Tighter rhythm on tablet — 20 px sides, 32 px bottom is still
+     * plenty of breathing room. */
+    padding: var(--space-5) var(--space-5) var(--space-7);
+  }
+
+  .app-topbar {
+    padding: 0 var(--space-5);
+  }
+
+  .dashboard-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .login-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .login-hero {
+    display: none;
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dashboard-kpis,
+  .category-grid,
+  .product-card-grid,
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-wrap {
+    /* Phone: 14 px gutter preserves the side rhythm from the design system
+     * while shrinking the top gap so titles sit closer to the topbar. */
+    padding: var(--space-4);
+  }
+
+  .page-title {
+    font-size: 1.65rem;
+  }
+
+  .app-topbar {
+    padding: 0 12px;
+  }
+
+  .top-search {
+    display: none !important;
+  }
+
+  .toolbar {
+    width: 100%;
+  }
+
+  .toolbar .btn {
+    flex: 1 1 auto;
+  }
+
+  .login-panel {
+    padding: 24px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline:before {
+    display: none;
+  }
+
+  .timeline-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    margin: 8px 0;
+  }
+
+  .timeline-dot {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .kpi-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-builder {
+    grid-template-columns: 1fr;
+  }
+
+  .route-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .route-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .kpi-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-grid,
+  .two-col-kv,
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Wizard stepper (canonical) — components.css .wizard-steps / .wizard-step /
+     .wizard-line, used by routes/orders/WizardStepper.jsx. Stack vertically on
+     small screens, hide the connector lines between steps. */
+  .wizard-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .wizard-line {
+    display: none;
+  }
+
+  .fulfilment-line {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .fulfilment-line:before {
+    display: none;
+  }
+
+  .fulfil-step {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fulfil-step small {
+    margin-left: auto;
+  }
+
+  .filter-inline .form-select {
+    width: 100%;
+  }
+
+  .activity-compact {
+    grid-template-columns: 12px 1fr;
+  }
+
+  .activity-compact time {
+    grid-column: 2;
+  }
+}
