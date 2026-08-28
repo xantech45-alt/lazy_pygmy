@@ -131,19 +131,6 @@ CRUD. Object URLs are never serialised.
 
 ---
 
-## Documentation
-
-- `docs/FRONTEND_PHASE_LEDGER.md` — phase-by-phase traceability matrix
-- `docs/FRONTEND_AUDIT.md` — Phase 7 audit findings + resolutions
-- `docs/CLIENT_IMAGE_STORAGE.md` — image-pipeline contract
-- `docs/BACKEND_ARCHITECTURE.md` — separately-authored reference for the
-  not-yet-built backend
-- `IMPLEMENTATION_SUMMARY.md` — narrative summary of the work
-- `QA_REPORT.md` — test + lint + build evidence
-- `FRONTEND_UPGRADE_AUDIT.md` — pre-master-prompt audit
-
----
-
 ## Accessibility
 
 - All form controls have matching `htmlFor`/`id` pairs.
