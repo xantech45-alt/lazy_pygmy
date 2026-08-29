@@ -12,7 +12,10 @@
   }
 
   .content-grid {
-    grid-template-columns: 1fr;
+    /* minmax(0, 1fr) so wide children (e.g. the transfer table that
+     * spans 6+ columns on /warehouses/transfers/new) cannot push the
+     * grid track past the viewport and cause horizontal scroll. */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   /* Tablet and below: the three chart cards (Warehouse Stock Levels, Top
@@ -208,7 +211,10 @@
   }
 
   .order-builder {
-    grid-template-columns: 1fr;
+    /* minmax(0, 1fr) so wide children (e.g. the GRN table on
+     * /purchase-orders/:po/receive) cannot push the grid track past
+     * the viewport and cause horizontal scroll. */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .route-cards {

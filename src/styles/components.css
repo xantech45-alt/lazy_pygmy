@@ -1022,6 +1022,23 @@
   display: block;
 }
 
+/* On narrow viewports the right-anchored 9-item "New" menu overflows the
+ * viewport (its longest label "New Purchase Order" is wider than the column
+ * the button has to work with). Detach it from the button and let it use
+ * the full screen width with a small inset so nothing extends past the
+ * viewport edge. We also bump z-index so it sits above the main content. */
+@media (max-width: 575.98px) {
+  .topbar-new .dropdown-menu.show {
+    position: fixed;
+    top: calc(var(--topbar-height, 56px) + 4px);
+    right: 8px;
+    left: 8px;
+    width: auto;
+    max-width: none;
+    z-index: 1100;
+  }
+}
+
 .icon-only-btn {
   /* Same square footprint as `.icon-circle` so all icon buttons in the
    * topbar sit on the same baseline. */
