@@ -15,8 +15,12 @@
     grid-template-columns: 1fr;
   }
 
+  /* Tablet and below: the three chart cards (Warehouse Stock Levels, Top
+   * Selling Products, Orders by Status) stack as a single vertical block
+   * so each chart's 3–5 axis labels remain readable. The 2-up grid
+   * squeezed labels together below ~992 px. */
   .analytics-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -88,9 +92,60 @@
     padding: var(--space-4);
   }
 
-  .page-title {
-    font-size: 1.65rem;
+  /* ── Mobile type scale (≤575.98 px) ──────────────────────────────────────
+   * Drops the body down to 14 px and re-fits every heading, KPI, and
+   * card surface to the same minor-third ratio so the page reads as one
+   * system instead of a desktop layout crammed into a phone.
+   *
+   *  Scale:  body 14 → small 12 → caption 11.5 → h5/h6 13 → h4 14
+   *          → h3 16 → h2 18 → h1 22  (×1.143 / 1.2 ratio)
+   *
+   * Anything not listed inherits from the desktop scale and is allowed to
+   * scale via this single breakpoint. Add new typography to this list
+   * rather than scattering `font-size` overrides per page. */
+  body {
+    font-size: 14px;
+    line-height: 1.45;
   }
+
+  h1, .page-title { font-size: 1.4rem; line-height: 1.2; }
+  h2 { font-size: 1.2rem; line-height: 1.25; }
+  h3 { font-size: 1.1rem; line-height: 1.3; }
+  h4 { font-size: 1rem;    line-height: 1.3; }
+  h5, .card-heading { font-size: .95rem; line-height: 1.3; }
+  h6 { font-size: .85rem; line-height: 1.3; }
+
+  .page-title { font-size: 1.4rem; }
+  .page-subtitle { font-size: .85rem; }
+  .small-note   { font-size: .78rem; }
+  .section-kicker { font-size: .7rem;  letter-spacing: .14em; }
+
+  /* KPI tiles — keep the value legible, soften label/trend so the card
+   * doesn't dominate the phone width. */
+  .kpi-card { padding: 12px; min-height: 88px; }
+  .kpi-label { font-size: .8rem; }
+  .kpi-value { font-size: 1.5rem; }
+  .kpi-trend { font-size: .75rem; }
+
+  /* Card chrome — tighter headings + body padding so cards don't crowd. */
+  .app-card .card-head { padding: 12px 14px; }
+  .app-card .card-head h5 { font-size: .95rem; }
+  .app-card .card-body-app { padding: 12px 14px; }
+
+  /* Tables — drop to 12.5 px so 8 columns (Low-Stock Action Required)
+   * still fit inside 320 px viewports without horizontal scroll. */
+  .table-app { font-size: .8125rem; }
+  .table-app th,
+  .table-app td { padding: 8px 10px; }
+
+  /* Buttons — slight trim so the toolbar row doesn't overflow. */
+  .btn { font-size: .85rem; padding: 6px 12px; }
+  .btn-sm { font-size: .8rem;  padding: 4px 10px; }
+
+  /* Page toolbar buttons stretch to fill width (existing rule) so they
+   * don't crowd a single row. */
+  .toolbar { width: 100%; }
+  .toolbar .btn { flex: 1 1 auto; }
 
   .app-topbar {
     padding: 0 12px;
@@ -98,14 +153,6 @@
 
   .top-search {
     display: none !important;
-  }
-
-  .toolbar {
-    width: 100%;
-  }
-
-  .toolbar .btn {
-    flex: 1 1 auto;
   }
 
   .login-panel {
@@ -131,6 +178,28 @@
   .timeline-dot {
     margin: 0;
   }
+
+  /* Page-specific surfaces that read too large on a 320 px phone. */
+  .login-stat         { font-size: .9rem; }
+  .supplier-rating    { font-size: 1.6rem; }
+  .metric-line strong { font-size: 1.2rem; }
+  .kv-row             { font-size: .85rem; }
+  .permission         { font-size: .85rem; }
+  .order-line         { font-size: .9rem; }
+  .filter-inline      { font-size: .85rem; }
+  .mini-avatar        { width: 26px; height: 26px; font-size: .8rem; }
+  .profile-avatar     { width: 40px; height: 40px; font-size: 1.1rem; }
+  .profile-avatar.lg  { width: 64px; height: 64px; font-size: 1.25rem; }
+  .profile-avatar.xl  { width: 88px; height: 88px; font-size: 1.6rem; }
+  .success-check      { width: 42px; height: 42px; font-size: 1.35rem; }
+  .icon-circle        { width: 34px; height: 34px; }
+  .avatar             { width: 28px; height: 28px; font-size: .85rem; }
+
+  /* Bar/line/donut chart x-axis labels (rendered as canvas) are also
+   * squeezed in canvas-charts.js — but the surrounding <figure> and
+   * captioning should match the surrounding body type. */
+  .chart-box { min-height: 220px; }
+  .chart-box canvas { height: 210px; }
 }
 
 @media (max-width: 1199.98px) {

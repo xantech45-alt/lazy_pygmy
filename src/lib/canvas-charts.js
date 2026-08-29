@@ -7,11 +7,32 @@
  */
 import { brand } from './brand.js';
 
+// Responsive type scale — fixed pixel sizes from the original LPCharts
+// read fine at desktop widths but overlap on a 320 px phone. We scale
+// the label/value fonts only below the threshold where 12 month labels
+// actually collide (~290 px canvas width). Above 380 px the original
+// 11 px Arial holds.
+function labelFont(w) {
+  if (w < 320) return '8px Arial';
+  if (w < 380) return '9px Arial';
+  return '11px Arial';
+}
+function valueFont(w) {
+  if (w < 320) return 'bold 8px Arial';
+  if (w < 380) return 'bold 9px Arial';
+  return 'bold 11px Arial';
+}
+
 function setup(canvas) {
   if (!canvas) return null;
   const dpr = window.devicePixelRatio || 1;
   const w = canvas.clientWidth || 600;
-  const h = 250;
+  // Match the CSS-controlled display height. The container element
+  // already declares `height: 250px` (desktop) or `height: 210px`
+  // (mobile, via responsive.css). Reading from the computed style keeps
+  // the canvas bitmap aspect-ratio in sync with the rendered size so
+  // we don't get non-uniform vertical compression on phones.
+  const h = canvas.clientHeight || 250;
   canvas.width = w * dpr;
   canvas.height = h * dpr;
   const ctx = canvas.getContext('2d');
@@ -54,7 +75,7 @@ export function line(canvas, values, labels) {
     ctx.fill();
   });
   ctx.fillStyle = '#5b6572';
-  ctx.font = '11px Arial';
+  ctx.font = labelFont(w);
   labels.forEach((l, i) => {
     const xx = p.l + ((w - p.l - p.r) * i) / (labels.length - 1);
     ctx.fillText(l, xx - 8, h - 10);
@@ -84,10 +105,10 @@ export function bars(canvas, values, labels) {
     ctx.fillStyle = i === 0 ? brand.secondary : brand.accentTeal;
     ctx.fillRect(xx, yy, bw, hh);
     ctx.fillStyle = '#10141a';
-    ctx.font = 'bold 11px Arial';
+    ctx.font = valueFont(w);
     ctx.fillText(v.toLocaleString(), xx, yy - 5);
     ctx.fillStyle = '#5b6572';
-    ctx.font = '10px Arial';
+    ctx.font = labelFont(w);
     ctx.fillText(labels[i].slice(0, 12), xx, h - 12);
   });
 }
@@ -118,7 +139,7 @@ export function donut(canvas, values, labels) {
     ctx.fill();
     a = b;
   });
-  ctx.font = '11px Arial';
+  ctx.font = labelFont(w);
   labels.forEach((l, i) => {
     ctx.fillStyle = cols[i % cols.length];
     ctx.fillRect(w * 0.72, 45 + i * 26, 10, 10);

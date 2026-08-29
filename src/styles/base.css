@@ -73,6 +73,28 @@ a:hover {
   cursor: pointer;
 }
 
+/* Bootstrap's `.visually-hidden` already gives us `position:absolute;
+ * width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0)`, which
+ * should keep the screen-reader fallback tables in the chart components
+ * out of the document's scrollWidth. In practice the `<table>` element
+ * sizes by content (not by `width`) when `table-layout:auto`, so the
+ * 1 px box is bypassed and 12 month labels at 11 px Arial stretch the
+ * table to 1000+ px. Bootstrap's rule exempts `<caption>` from absolute
+ * positioning via `:not(caption)`, but the underlying `<table>` still
+ * grows.
+ *
+ * Fix: force hidden tables to render as a 1 px block so the width
+ * property takes effect regardless of `table-layout`. The clipped
+ * 1 px box is invisible to sighted users; the underlying markup is
+ * unchanged for screen readers. */
+table.visually-hidden {
+  display: block !important;
+  table-layout: fixed !important;
+  width: 1px !important;
+  height: 1px !important;
+  word-break: break-all;
+}
+
 .status-dot {
   width: 8px;
   height: 8px;
