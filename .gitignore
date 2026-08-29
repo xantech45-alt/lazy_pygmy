@@ -27,3 +27,7 @@ Thumbs.db
 ~$*
 *.pptx
 .vercel
+
+# Debug/testing screenshots
+.playwright-mcp/
+/*.png
